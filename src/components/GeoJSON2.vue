@@ -1,9 +1,24 @@
 <template>
-  <div>
-    <div style="height: 10%; overflow: auto;">
-      <h3>GeoJSON example as this <a href="http://leafletjs.com/examples/geojson/">example</a></h3>
+  <div style="height:100%">
+    <div class="padding-left">
+      <select class="select-PR">
+        <option>Rama</option>
+        <option>Audi</option>
+        <option>BMW</option>
+      </select>
+      <select class="select-PR">
+        <option>Categoria</option>
+        <option>Audi</option>
+        <option>BMW</option>
+      </select>
+      <select class="select-PR">
+        <option>Otra opción</option>
+        <option>Audi</option>
+        <option>BMW</option>
+      </select>
     </div>
-    <l-map style="height: 90%" :zoom="zoom" :center="center">
+
+    <l-map style="height: 90%; width:100%" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-geo-json :geojson="bus.geojson" :options="bus.options"></l-geo-json>
       <l-geo-json :geojson="bicycleAndCampus.geojson" :options="bicycleAndCampus.options"></l-geo-json>
@@ -12,6 +27,32 @@
       <div id='bla'></div>
   </div>
 </template>
+
+<style>
+.padding-left{
+  padding-left:2em;
+}
+.select-PR {
+  display: inline-block;
+  width: 30%;
+  height: calc(2.25rem + 2px);
+  padding: .2em 1.75em .375em .75em;
+  margin: 10px 15px 10px 15px;
+  line-height: 1.5;
+  color: #495057;
+  vertical-align: middle;
+  background: #fff url(data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' v…0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E) no-repeat right .75rem center;
+  background-size: 8px 10px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 18px;
+}
+
+</style>
+
 
 <script>
 import Vue from 'vue';

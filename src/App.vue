@@ -1,11 +1,5 @@
 <template>
   <div>
-    <ul id="side">
-
-      <li>
-        <a href="#" @click="currentView='geo-json2'">GeoJSON 2</a>
-      </li>
-    </ul>
     <component id="full_div" :is="currentView"></component>
   </div>
 </template>
@@ -41,7 +35,7 @@ body {
 }
 
 #side {
-  float:left;
+  top:0;
   width:208px;
 }
 
@@ -50,9 +44,8 @@ body {
   overflow-x: auto;
   top: 0;
   right: 0;
-  left: 208px;
+  left: 0;
   bottom: 0;
-  padding-left: 8px;
   border-left: 1px solid #ccc;
 }
 
